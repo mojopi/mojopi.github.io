@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <style>
+    #body {
+        background-image: url(https://s3-us-west-2.amazonaws.com/codesketches/octopus_suckers.png);
+    }
+    
+    #mockup {
+        font-family: "Courier New";
+        font-size: 16px;
+        color: #f2f2f2;
+        opacity: 0.5;
+    }
+
+    #description
+    { font-family: "Courier New";
+        font-size: 16px;
+        color: white;
+     
+    }
+    
+    .button {
+        opacity: 0.2;
+        transition-duration: 1.0s;
+    }
+    
+    #button1 {
+        height: 60px;
+        width: 60px;
+        border-radius: 50%;
+        background-color: blue;
+        position: fixed;
+        top: 175px;
+        left: 376px;
+    }
+    
+    #button2 {
+        height: 60px;
+        width: 60px;
+        border-radius: 50%;
+        background-color: purple;
+        position: fixed;
+        top: 210px;
+        left: 335px;
+    }
+    
+    #button3 {
+        height: 60px;
+        width: 60px;
+        border-radius: 50%;
+        background-color: blue;
+        position: fixed;
+        top: 170px;
+        left: 299px;
+    }
+    
+    #button4 {
+        height: 60px;
+        width: 60px;
+        border-radius: 50%;
+        background-color: yellow;
+        position: fixed;
+        top: 126px;
+        left: 332px;
+    }
+    
+    #button5 {
+        height: 60px;
+        width: 60px;
+        border-radius: 50%;
+        background-color: red;
+        position: fixed;
+        top: 235px;
+        left: 390px;
+    }
+    
+    #button6 {
+        height: 60px;
+        width: 60px;
+        border-radius: 50%;
+        background-color: green;
+        position: fixed;
+        top: 209px;
+        left: 440px;
+    }
+    
+    #button7 {
+        height: 60px;
+        width: 60px;
+        border-radius: 50%;
+        background-color: purple;
+        position: fixed;
+        top: 116px;
+        left: 409px;
+    }
+    
+    #button8 {
+        height: 50px;
+        width: 50px;
+        border-radius: 50%;
+        background-color: purple;
+        position: fixed;
+        top: 160px;
+        left: 252px;
+    }
+    </style>
+</head>
+
+<body id="body">
+
+        <p id = description> click on my colorful suckers + listen!</p>
+    <a id="mockup" href="https://s3-us-west-2.amazonaws.com/codesketches/octopus_mockup.png"><p>mock up</p></a>
+
+
+
+
+    <div class='button' id='button1'></div>
+    <div class='button' id='button2'></div>
+    <div class='button' id='button3'></div>
+    <div class='button' id='button4'></div>
+    <div class='button' id='button5'></div>
+    <div class='button' id='button6'></div>
+    <div class='button' id='button7'></div>
+    <div class='button' id='button8'></div>
+
+
+    <audio id="audio" src="https://s3-us-west-2.amazonaws.com/codesketches/Blop-Mark_DiAngelo-79054334+(1).wav"></audio>
+
+
+    <script>
+
+    function play() {
+        var audio = document.getElementById("audio");
+        audio.play();
+    }
+
+
+    var button = document.getElementsByClassName("button");
+    for (var i = 0; i < 8; i = i + 1) {
+        button[i].addEventListener('click', play)
+    };
+
+    function disappear1() {
+        button1.style.opacity = 0.0
+    };
+
+    var button1 = document.getElementById('button1');
+    var button2 = document.getElementById('button2');
+    var button3 = document.getElementById('button3');
+    var button4 = document.getElementById('button4');
+    var button5 = document.getElementById('button5');
+    var button6 = document.getElementById('button6');
+    var button7 = document.getElementById('button7');
+    var button8 = document.getElementById('button8');
+
+    function disappear1() {
+        button1.style.opacity = 0.0
+    };
+
+    function disappear2() {
+        button2.style.opacity = 0.0
+    };
+
+    function disappear3() {
+        button3.style.opacity = 0.0
+    };
+
+    function disappear4() {
+        button4.style.opacity = 0.0
+    };
+
+    function disappear5() {
+        button5.style.opacity = 0.0
+    };
+
+    function disappear6() {
+        button6.style.opacity = 0.0
+    };
+
+
+    function disappear7() {
+        button7.style.opacity = 0.0
+    };
+
+
+    function disappear8() {
+        button8.style.opacity = 0.0
+    };
+
+
+    button1.addEventListener('click', disappear1);
+    button2.addEventListener('click', disappear2);
+    button3.addEventListener('click', disappear3);
+    button4.addEventListener('click', disappear4);
+    button5.addEventListener('click', disappear5);
+    button6.addEventListener('click', disappear6);
+    button7.addEventListener('click', disappear7);
+    button8.addEventListener('click', disappear8);
+
+    
+
+    function reappear1() { var show = true
+        if (button1.style.opacity = 0.0)
+            show = false 
+        {button1.style.opacity = 0.2}
+        show = true
+
+    };
+
+     setInterval(reappear1, 2500)
+
+ 
+    function reappear2() { var show = true
+        if (button2.style.opacity = 0.0)
+            show = false 
+        {button2.style.opacity = 0.2}
+        show = true
+
+    };
+
+        setInterval(reappear2, 2500)
+
+
+    function reappear3() { var show = true
+        if (button3.style.opacity = 0.0)
+            show = false 
+        {button3.style.opacity = 0.2}
+        show = true
+    };
+
+        setInterval(reappear3, 2000)
+
+
+    function reappear4() { 
+    	var show = true
+        if (button4.style.opacity = 0.0)
+            show = false 
+        {button4.style.opacity = 0.2}
+        show = true
+    };
+
+        setInterval(reappear4, 2000)
+
+
+    function reappear5() { 
+    	var show = true
+        if (button5.style.opacity = 0.0)
+            show = false 
+        {button5.style.opacity = 0.2}
+        show = true
+    };
+
+    setInterval(reappear5, 2000)
+
+    function reappear6() { 
+    	var show = true
+        if (button6.style.opacity = 0.0)
+            show = false 
+        {button6.style.opacity = 0.2}
+        show = true
+
+    };
+        setInterval(reappear6, 2000)
+
+
+    function reappear7() {var show = true 
+        if (button7.style.opacity = 0.0)
+            show = false 
+        {button7.style.opacity = 0.2} };
+
+            setInterval(reappear7, 2000)
+
+
+   
+
+    function reappear8() {
+        if (button8.style.opacity = 0.0)
+            show = false 
+        {button8.style.opacity = 0.2}
+        show = true
+
+    };
+
+
+    setInterval(reappear8, 2000)
+
+
+    </script>
+
+</body>
+
+</html>
