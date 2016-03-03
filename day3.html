@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+
+    html {
+        background-image: url(https://s3-us-west-2.amazonaws.com/codesketches/namibian_desert2.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    #mousebox {
+        position: fixed;
+        height: 100px;
+        width: 100px;
+        background-color: green;
+        opacity: 0.5;
+        top: 0px;
+        left: 0px;
+        border-radius: 50%;
+    }
+    
+    #innerbox {
+        height: 20px;
+        width: 40px;
+        background-color: green;
+        opacity: 1.0;
+        position: relative;
+        top: 30%;
+        left: 40%;
+        font-family: "Courier New";
+    }
+
+    #location {
+    	font-family: "Courier New";
+    }
+    </style>
+</head>
+
+<body>
+    <div id='mousebox'>
+        <div id="innerbox">
+            <div></div>
+            <script>
+            // console.log(a.pageX, a.pageY)
+
+
+
+            // var stamp = this;
+            // var stamp = 
+            //        var c;
+            //        function get(c) {
+            //            console.log(c.pageX);
+            // return "c.pageX";
+
+            //        }
+
+            //        document.addEventListener('click', get)
+
+
+            function stamp(b) {
+                document.addEventListener('mousemove', function(a) {
+                    innerbox.innerHTML = a.pageX + ", " + a.pageY;
+
+                })
+
+                //how come can do a.pageX vs. event.pagex. Would i need to put the event as an arugment to do that?//
+
+
+                var circle = document.createElement('div');
+                document.body.appendChild(circle);
+                circle.style.height = Math.random() * 150 + "px";
+                circle.style.width = circle.style.height;
+                circle.style.backgroundColor = 'rgb(' +
+                    Math.floor(Math.random() * 255) + ',' +
+                    Math.floor(Math.random() * 255) + ',' +
+                    Math.floor(Math.random() * 255) + ')';
+
+
+                circle.style.borderRadius = '50%';
+                circle.style.position = 'fixed';
+                circle.style.left = event.pageX + "px";
+                circle.style.top = event.pageY + "px";
+                circle.style.opacity = '1.0';
+
+                var box = document.createElement('div');
+                box.id = "location"
+                circle.appendChild(box);
+                box.style.width = "70%"
+                box.style.height = "70%"
+                box.style.position = "relative"
+                box.style.top = "15%"
+                box.style.left = "15%"
+                // box.style.backgroundColor = "green"
+
+                // box.innerHTML = '<span style = 'font-size:20%' >
+                //     "I'm at" + event.pageX + "," + event.pageY </span>   
+
+                box.innerHTML = "I'm at " + event.pageX + ", " + event.pageY + "!";
+
+               /*how do I change the font size and color using javascript of an html element? box.innerHTML.fontSize = Math.random()* 50 + "px"; */      
+
+            }
+
+            document.addEventListener('click', stamp)
+            </script>
+</body>
+
+</html>

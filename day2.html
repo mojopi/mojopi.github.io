@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+
+    #description{
+        font-family: "Courier New";
+        size: 16px;
+
+    }
+
+    </style>
+    
+</head>
+
+<body>
+
+<h2 id="description"> click + hold on my kernals!</h2>
+
+    <audio id="audio" src="https://s3-us-west-2.amazonaws.com/codesketches/Blop-Mark_DiAngelo-79054334+(1).wav"></audio>
+    <script>
+    window.onload = function() {
+        function createdivs() {
+
+            var circle = document.createElement('div');
+            document.body.appendChild(circle);
+            circle.style.width = "60px"
+            circle.style.height = "60px"
+            circle.style.borderRadius = '50%'
+            circle.style.position = 'fixed'
+            circle.style.left = (2 * Math.random()) * 400 + "px"
+            circle.style.top = (4 * Math.random()) * 200 + "px"
+            circle.style.backgroundImage = 'url(https://s3-us-west-2.amazonaws.com/codesketches/popcorn1.png)';
+            circle.style.transitionDuration = '1s';
+
+            function whackAMole() {
+                //1. make circle's opacity 0, 2. wait several seconds 3. make circle's opacity 0.2//
+                setTimeout(function() {
+                    circle.style.opacity = 0.0
+                }, 2000)
+            }
+            whackAMole();
+
+
+        }
+
+        createdivs();
+
+
+
+
+        var kernals = document.createElement("div")
+        document.body.appendChild(kernals)
+        kernals.style.height = "250px";
+        kernals.style.width = "265px";
+        kernals.style.backgroundImage = 'url(https://s3-us-west-2.amazonaws.com/codesketches/popcorn+kernals.png)'
+
+
+        var mousedown;
+
+        function f() {
+            mousedown = false
+        };
+
+        function t() {
+            mousedown = true
+        }
+        kernals.addEventListener('mousedown', t)
+
+        kernals.addEventListener('mouseup', f);
+
+        kernals.addEventListener('mousedown', y);
+
+
+
+        var b;
+
+        function y() {
+            b = setInterval(popcorn, 150)
+        }
+
+
+        function popcorn() {
+            console.log("1");
+            createdivs();
+            if (mousedown == false) {
+                clearInterval(b)
+            }
+
+
+        kernals.addEventListener('mousedown', z);
+
+
+            var c;
+            function z() {
+                c = setInterval(play, 150)
+            }
+
+            function play() {
+                var audio = document.getElementById("audio");
+                audio.play();
+                if (mousedown == false) {
+                    clearInterval(c)
+                }
+            }
+
+
+        }
+
+    }
+    </script>
+</body>
+
+</html>
