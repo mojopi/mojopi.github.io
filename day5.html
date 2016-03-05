@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html id="html">
+
+<head>
+    <style>
+.circles {
+/*        display: inline-block;
+*/    }
+
+
+.Box {
+    font-family:"Courier New";
+    font-size: 14px;
+    text-align: center;
+}
+
+
+#html{
+    width:100%;
+    height:100%;
+    position:relative;
+}
+
+#description {
+
+    font-family:"Courier New";
+    font-size: 30px;
+
+}
+
+/*#outline {
+    width: 400px;
+     height: 18px;
+     background-color: white;
+     opacity: 0.5;
+}*/
+
+
+    </style>
+
+</head>
+
+<body>
+
+<div id = "outline"> <h2 id = "description"> How are you feeling? <h2> </div>
+
+
+    <script>
+    var button;
+
+    function createButton(n) {
+        button = document.createElement('div');
+        button.classList.add("circles");
+        document.body.appendChild(button);
+        button.style.width = "100px";
+        button.style.height = "100px";
+        // button.style.backgroundColor = "red";
+    button.style.backgroundColor = "rgb(" + 
+    Math.floor(Math.random() * 255) + "," + 
+    Math.floor(Math.random() * 255) + "," + 
+    Math.floor(Math.random() * 255) + ")"
+    button.style.opacity = "0.8";
+    button.style.position = "relative";
+    button.style.top = "30%";
+    // button.style.left = Math.random() * 300 + "px";
+    // button.style.top = Math.random() * 300 + "px";
+
+        button.style.borderRadius = "50%";
+        button.id = "button" + n;
+
+        var innerBox = document.createElement("div");
+        button.appendChild(innerBox);
+        innerBox.classList.add("Box");
+        innerBox.style.width = "50px";
+        innerBox.style.height = "50px";
+        innerBox.style.position = "relative";
+        // innerBox.style.backgroundColor ="red";
+        innerBox.style.top = "30%";
+        innerBox.style.left = "20%";
+        innerBox.id = "innerBox" + n;
+        // innerBox.innerHTML = "sexy";
+    };
+
+    for (i = 0; i < 5; i = i + 1) {
+        createButton(i)
+    };
+
+    var innerBox0 = document.getElementById("innerBox0");
+    innerBox0.innerHTML = "shhhhh!";
+
+    var innerBox1 = document.getElementById("innerBox1");
+    innerBox1.innerHTML = "sexy";
+
+    var innerBox2 = document.getElementById("innerBox2");
+    innerBox2.innerHTML = "anne frank copycat";
+
+    var innerBox3 = document.getElementById("innerBox3");
+    innerBox3.innerHTML = "joy";
+
+    var innerBox4 = document.getElementById("innerBox4");
+    innerBox4.innerHTML = "dancy";
+
+
+
+
+    var button0 = document.getElementById("button0");
+    button0.addEventListener("click", function() {
+        console.log("hi!");
+        document.getElementById('html');
+        html.style.backgroundImage = "url(https://s3-us-west-2.amazonaws.com/codesketches/andy_shhhh.png)";
+        html.style.backgroundSize = "contain";
+
+    });
+
+    var button1 = document.getElementById("button1");
+
+    button1.addEventListener("click", function() {
+        console.log("hi!");
+        document.getElementById('html');
+        html.style.backgroundImage = "url(https://s3-us-west-2.amazonaws.com/codesketches/straight_up_sexy.jpg)";
+        html.style.backgroundSize = "contain";
+
+    });
+
+    var button2 = document.getElementById("button2");
+    button2.addEventListener("click", function() {
+        console.log("hi!");
+        document.getElementById('html');
+        html.style.backgroundImage = "url(https://s3-us-west-2.amazonaws.com/codesketches/shy.jpg)";
+        html.style.backgroundSize = "contain";
+
+    });
+
+    var button3 = document.getElementById("button3");
+    button3.addEventListener("click", function() {
+        console.log("hi!");
+        document.getElementById('html');
+        html.style.backgroundImage = "url(https://s3-us-west-2.amazonaws.com/codesketches/smiley.jpg)";
+        html.style.backgroundSize = "contain";
+
+    });
+
+
+    var button4 = document.getElementById("button4");
+    button4.addEventListener("click", function() {
+        console.log("hi!");
+        document.getElementById('html');
+        html.style.backgroundImage = "url(https://s3-us-west-2.amazonaws.com/codesketches/dancy.jpg)";
+        html.style.backgroundSize = "contain";
+
+    });
+
+
+
+    // innerBox.innerHTML.style["fontFamily"] = "Courier";
+    // innerBox.innerHTML.style["fontSize"] = "16px";
+    </script>
+</body>
+
+</html>
