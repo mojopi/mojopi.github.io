@@ -3,169 +3,93 @@
 
 <head>
     <style>
-    .bubble {
-        width: 37px;
-        height: 37px;
-        border-radius: 50%;
-        background-color: blue;
-        position: relative;
-        transition: .25s;
+    html {
+        background-color: red;
+        background-image: url("http://www.designscene.net/wp-content/gallery/082012/prada-store-taiyuan-04.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
     }
     
-    #body {
-        background-color: #99e5ff;
+    #description {
+        font-family: "Courier New";
+        text-align: center;
+        position: fixed;
+        top: 8%;
     }
-    </style>
-    <title></title>
-</head>
-
-<body id="body">
-    <div class="bubble"></div>
-    <div class="bubble"></div>
-    <div class="bubble"></div>
-    <div class="bubble"></div>
-    <div class="bubble"></div>
-    <div class="bubble"></div>
-    <div class="bubble"></div>
-    <div class="bubble"></div>
-    <div class="bubble"></div>
-    <div class="bubble"></div>
-    <div class="bubble"></div>
-    <div class="circles"></div>
-    <div class="circles"></div>
-    <div class="circles"></div>
-    <div class="circles"></div>
-    <div class="circles"></div>
-    <div class="circles"></div>
-    <div class="circles"></div>
-    <div class="circles"></div>
-    <div class="circles"></div>
-    <div class="circles"></div>
-    <div class="circles"></div>
-    <script>
-    // var bubble = document.getElementsByClassName('bubble')
-
-    /*circle.style.top = '200px'
-    circle.style.left = '100px'*/
-
-    var bubbles = document.getElementsByClassName('bubble')
-
-    //question: can I set a variable to a for loop so that I can do set interval instead and so the balls will change on own without having to refresh the page.?//
-
-    for (var i = 0; i < bubbles.length; i = i + 1) {
-        console.log("Right now, i is", i);
-        bubbles[i].style.left = Math.floor(Math.random() * 100) + '%';
-        console.log("bubbles[i] is", bubbles[i]);
+    
+    #hippo1 {
+        width: 380px;
+        height: 300px;
+        position: fixed;
+        top: 60%;
+        background-image: url("https://s3-us-west-2.amazonaws.com/codesketches/both_hippos.png")
     }
-    console.log("But now the time is", Date.now());
-
-    // var position = function() {
-    //     bubbles[0].style.top = "calc(" + Math.floor(100 * Math.random()) + '%' + ' - 200px)';
-    //     bubbles[0].style.left = "calc(" + Math.floor(100 * Math.random()) + '%' + ' - 200px)';
-    // }
-
-    // position()
-    var colorString = function() {
-        var consoleColor = "rgb(" + Math.floor(255 * Math.random()) + ',' + Math.floor(255 * Math.random()) + ',' + Math.floor(255 * Math.random()) + ")"
-        console.log("the colorstring value is", consoleColor)
-        return consoleColor;
-
-    };
-
-
-    var colorChange = function() {
-        for (var i = 0; i < 12; i = i + 1) {
-            bubbles[i].style.backgroundColor = colorString();
-        };
-    };
-
-    setInterval(colorChange, 500)
-
-    var size = function() {
-        return Math.floor(Math.random() * 200)
+    
+    #hippo1:hover {
+        background-position: 300px 0px;
     }
-
-    size()
-
-
-    // console.log("the size is," size())
-
-    var sizeRadius = function() {
-        for (var i = 0; i < 12; i = i + 1) {
-            var radius = size() + 'px'
-            bubbles[i].style.height = radius;
-            bubbles[i].style.width = radius;
+    
+    @-webkit-keyframes animatedBackground {
+        from {
+            background-position: 0px 0px;
+        }
+        to {
+            background-position: -200px 0px;
         }
     }
-
-    var amIrunning = false;
-    var timerReference = setInterval(sizeRadius, 500);
-    amIrunning = true;
-
-    var toggleMetronome = function() {
-        if (amIrunning) {
-            clearInterval(timerReference);
-            amIrunning = false;
-        } else {
-            timerReference = setInterval(sizeRadius, 500);
-            amIrunning = true;
-        };
-    }
-    document.addEventListener('click', toggleMetronome);
-
     
-        document.addEventListener('dblClick', setInterval (colorChange, 100));
+    #mouse {
+        -webkit-animation: animatedBackground 1s infinite;
+        -webkit-animation-timing-function: steps(2, end);
+    }
+    </style>
+</head>
+
+<body>
+    <h2 id="description">Territoriality in Prada.</h2>
+    <audio id="audio" src="https://s3-us-west-2.amazonaws.com/codesketches/Evil_Laugh_2-Sound_Explorer-1081271267.mp3"></audio>
+    <div id="hippo1"></div>
+    <script>
+    var mouse = document.createElement('div');
+    document.body.appendChild(mouse);
+    mouse.style.width = "93px";
+    mouse.style.height = "100px";
+    // mouse.style.backgroundColor = "blue";
+    mouse.style.backgroundImage = "url(https://s3-us-west-2.amazonaws.com/codesketches/bb2.png)";
+    mouse.style.position = "relative";
+    mouse.style.backgroundSize = "cover";
+    mouse.id = "mouse";
+    mouse.style.opacity = 0.5;
 
 
+    function flap() {
+        mouse.style.opacity = 1.0;
+    };
 
-                // var allOverAgain = function () {document.createElement(circles)}
-
-
-                // var (startAgain) = function() {if (amIrunning = false) {
-
-                // }};
+    setInterval(flap, 100)
 
 
-                // var body =document.getElementById(body);
+    function stamp() {
+        document.addEventListener('mousemove', function(a) {
+            console.log(a.pageX + ", " + a.pageY);
+            mouse.style.left = a.pageX + "px";
+            mouse.style.top = a.pageY + "px";
 
-                //     var colorString = function() {
-                //         return "rgb(" + Math.floor(255 * Math.random()) + ',' + Math.floor(255 * Math.random()) + ',' + Math.floor(255 * Math.random()) + ")";
-                //     }
+        })
+    }
 
-                //     for (i = 0, i = I) {
-                //         body[i].style.backgroundColor = colorString()
-                //     }
+    stamp();
 
+    // var hippo1 = document.getElementbyId('hippo1');
+    // hippo1.addEventListener("click",function play() {
+    //                         var audio = document.getElementById("audio")
+    //                         audio.play()};
+    //  )
 
+    // function scurry (a) {
+    //  document.addEventListener("mousemove", function(b) {console.log(b.pageX "," b.pageY)}) };
 
-                // for (var i = 0; i < 4; i = i+1) {bubbles[i].style.width = size();}
-
-                // /bubbles[i].style.backgroundColor = Math.floor(Math.random()*100) + '%'; 
-
-                // // color()*/
-
-
-                // size ()*/
-
-                // setInterval(position, 500);
-                // setInterval(color, 500)
-                //setInterval(size, 500)//
-
-                // for (var i = 0; i < 10; i = i + 1) {
-                //  console.log(i);
-                // }
-
-                // var i = 0;
-                // while (i < 10) {
-                //     console.log(i);
-                //     i = i + 1;
-                // }
-
-                // var i = 0;
-                // do {
-                //     console.log(i);
-                //     i = i + 1;
-                // } while (i < 10);
+    // scurry();
     </script>
 </body>
 

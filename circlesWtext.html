@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+    .bubble {
+        width: 37px;
+        height: 37px;
+        border-radius: 50%;
+        background-color: blue;
+        position: relative;
+        transition: .25s;
+    }
+    
+    #body {
+        background-color: #99e5ff;
+    }
+
+    #textbox1 {
+        position: fixed;
+        top: 300px;
+        left: 400px;
+
+    }
+    </style>
+    <title></title>
+</head>
+
+<body id="body">
+
+<input id="textbox1" type="text" <span style=font-family "Courier New"> value="give me a word!"</span>
+<!-- 
+I dont understand the span tag. I also don't understand the html input tag. -->
+
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="circles"></div>
+    <div class="circles"></div>
+    <div class="circles"></div>
+    <div class="circles"></div>
+    <div class="circles"></div>
+    <div class="circles"></div>
+    <div class="circles"></div>
+    <div class="circles"></div>
+    <div class="circles"></div>
+    <div class="circles"></div>
+    <div class="circles"></div>
+    <script>
+  
+    var bubbles = document.getElementsByClassName('bubble')
+
+   
+
+    for (var i = 0; i < bubbles.length; i = i + 1) {
+        console.log("Right now, i is", i);
+        bubbles[i].style.left = Math.floor(Math.random() * 100) + '%';
+        console.log("bubbles[i] is", bubbles[i]);
+    }
+    console.log("But now the time is", Date.now());
+
+  
+    var colorString = function() {
+        var consoleColor = "rgb(" + Math.floor(255 * Math.random()) + ',' + Math.floor(255 * Math.random()) + ',' + Math.floor(255 * Math.random()) + ")"
+        console.log("the colorstring value is", consoleColor)
+        return consoleColor;
+
+    };
+
+
+    var colorChange = function() {
+        for (var i = 0; i < 12; i = i + 1) {
+            bubbles[i].style.backgroundColor = colorString();
+        };
+    };
+
+    setInterval(colorChange, 500)
+
+    var size = function() {
+        return Math.floor(Math.random() * 200)
+    }
+
+    size()
+
+    var sizeRadius = function() {
+        for (var i = 0; i < 12; i = i + 1) {
+            var radius = size() + 'px'
+            bubbles[i].style.height = radius;
+            bubbles[i].style.width = radius;
+        }
+    }
+
+    var amIrunning = false;
+    var timerReference = setInterval(sizeRadius, 500);
+    amIrunning = true;
+
+    var toggleMetronome = function() {
+        if (amIrunning) {
+            clearInterval(timerReference);
+            amIrunning = false;
+        } else {
+            timerReference = setInterval(sizeRadius, 500);
+            amIrunning = true;
+        };
+    }
+    document.addEventListener('click', toggleMetronome);
+
+    
+        document.addEventListener('dblClick', setInterval (colorChange, 100));
+
+
+
+                // var allOverAgain = function () {document.createElement(circles)}
+
+
+                // var (startAgain) = function() {if (amIrunning = false) {
+
+                // }};
+
+
+                // var body =document.getElementById(body);
+
+                //     var colorString = function() {
+                //         return "rgb(" + Math.floor(255 * Math.random()) + ',' + Math.floor(255 * Math.random()) + ',' + Math.floor(255 * Math.random()) + ")";
+                //     }
+
+                //     for (i = 0, i = I) {
+                //         body[i].style.backgroundColor = colorString()
+                //     }
+
+
+
+                // for (var i = 0; i < 4; i = i+1) {bubbles[i].style.width = size();}
+
+                // /bubbles[i].style.backgroundColor = Math.floor(Math.random()*100) + '%'; 
+
+                // // color()*/
+
+
+                // size ()*/
+
+                // setInterval(position, 500);
+                // setInterval(color, 500)
+                //setInterval(size, 500)//
+
+                // for (var i = 0; i < 10; i = i + 1) {
+                //  console.log(i);
+                // }
+
+                // var i = 0;
+                // while (i < 10) {
+                //     console.log(i);
+                //     i = i + 1;
+                // }
+
+                // var i = 0;
+                // do {
+                //     console.log(i);
+                //     i = i + 1;
+                // } while (i < 10);
+    </script>
+</body>
+
+</html>
