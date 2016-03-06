@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+
+    #anaiya{
+    	text-align: center;
+    }
+
+    #content {
+        font-size: 18px;
+        font-family: "Courier New";
+        text-align: left;
+        position: fixed;
+        top: 20px;
+        line-height: 150%;
+        margin: 50px;
+        margin-bottom: 50px;
+    }
+    
+    .magic:hover {
+        color: yellow;
+        font-style: italic;
+        font-weight: bold;
+    }
+    
+    #magic1 {
+        width: 75px;
+        height: 30px;
+        /*    	background-color:red;
+*/
+    }
+    
+    #bodydiv {
+        background-color: #8A2BE2;
+        opacity: 0.9;
+        height: 1000px;
+        width: 2000px;
+        position: fixed;
+        transition-duration: 1.5s;
+        transition-timing-function: ease-in-out;
+    }
+    
+    #flower {
+        transition-timing-function: ease-in-out;
+    }
+    
+    @-webkit-keyframes animatedBackground {
+        from {
+            background-position: 0px 0px;
+        }
+        to {
+            background-position: -800px 0px;
+        }
+    }
+    
+    #shimmer {
+        -webkit-animation: animatedBackground 1s infinite;
+        -webkit-animation-timing-function: steps(2, end);
+    }
+
+    #lit {
+/*    	background-color: red;
+*/    	width: 50px;
+    	height: 25px;
+    } 
+    </style>
+    <title></title>
+</head>
+
+<body>
+    <div id="bodydiv">
+        <div id="shimmer"></div>
+        <h2 id="content"> 
+        
+        From the time she was born, Millicent Monarch was <div id="magic1"> <span class="magic">MAGIC.</span></div>And it wasn't ordinary everyday fairy magic like everyone else had, but it was, well, different.
+
+If you were near her, you would sense something strane and wonderful floating around her.Something amazing, something...<span class="magic" id="magic2">     MAGICAL. </span> <br>
+
+
+When she smiled, it <div id="lit"><span class="magic">LIT<span></div>up the room. You could almost see the light streeming out of her brilliant smile. It made you feel happy for no reason, happy for everything. <br> <br>
+
+Whenever she laughed, it made you want to laugh to. Just the sound of her laughter made you blisfully happy, at peace with the world. <br> <br>
+
+Everything about her was wonderful. This is her story. <br>
+<span class="magic"id="anaiya"> Author: Anaiya Brown</span>
+
+</h2>
+    </div>
+    <script>
+    var shimmer = document.getElementById("shimmer");
+    var bodydiv = document.getElementById('bodydiv');
+    bodydiv.appendChild(shimmer);
+    shimmer.style.position = "fixed";    
+    shimmer.style.opacity = "0.0";
+    // shimmer.style.backgroundColor = "yellow";
+    shimmer.style.width = "400px";
+    shimmer.style.height = "400px";
+    shimmer.style.top = "350px";
+    shimmer.style.left = "200px";
+    shimmer.style.transitionTimingFunction = "easeInOut";
+    shimmer.style.transitionDuration = "2s"
+    shimmer.style.backgroundImage = "url(https://s3-us-west-2.amazonaws.com/codesketches/bb2.png)";
+    shimmer.style.backgroundSize = "cover";
+    // shimmer.style.zIndex = "10";
+
+
+    var magic1 = document.getElementById("magic1");
+    magic1.addEventListener("mousemove", function(a) {
+        console.log('hi!');
+        shimmer.style.opacity = "0.5";
+        if (shimmer.style.opacity = 0.5) {
+            setTimeout(function() {
+                shimmer.style.opacity = "0.0"
+            }, 2000)
+        }
+    });
+
+
+
+    var magic2 = document.getElementById('magic2');
+    magic2.style.width = "100px";
+    magic2.style.height = "50px";
+    magic2.style.position = "fixed";
+    // magic2.style.backgroundColor = "blue";
+    magic2.style.position = "fixed";
+    magic2.style.opacity = 1.0;
+
+
+
+// magic2.addEventListener("click", function()
+// 	{console.log("HELLO!")});
+
+    magic2.addEventListener('click', function appear(a) {
+        console.log("hello!");
+    var flower = document.createElement('div');
+    document.body.appendChild(flower);
+    flower.style.width = "50px";
+    flower.style.height = "50px";
+    flower.style.backgroundImage = "url(https://s3-us-west-2.amazonaws.com/codesketches/anaiya+flower.png)";
+    // flower.style.backgroundColor = "green"
+    flower.style.position = "fixed";
+    // flower.style.top = Math.random() * (document.body.offsetHeight - flower.offsetHeight) + 'px';
+    // flower.style.left = Math.random() * (document.body.offsetWidth - flower.offsetWidth) + 'px';
+    flower.style.top = 30 + "%";
+    flower.style.left = Math.random() * 100 + "%";
+    flower.style.opacity = 0.3;
+    flower.style.position = "fixed";
+    flower.style.backgroundSize = "cover";});
+
+    var lit = document.getElementById("lit");
+    lit.addEventListener("mousemove", function(a) {
+        console.log('howdy!');
+        bodydiv.style.backgroundColor = "#dabcf6";
+        if (bodydiv.style.backgroundColor = "#dabcf6") {
+            setTimeout(function() {bodydiv.style.backgroundColor ="#8A2BE2"  
+            }, 1500)
+        }
+    });
+
+
+
+    var mouse = document.createElement('div');
+    document.body.appendChild(mouse);
+    mouse.style.width = "100px";
+    mouse.style.height = "200px";
+    // mouse.style.backgroundColor = "blue";
+    mouse.style.backgroundImage = "url(https://s3-us-west-2.amazonaws.com/codesketches/fairy.png)";
+    mouse.style.position = "relative";
+    mouse.style.backgroundSize = "cover";
+    mouse.id = "mouse";
+
+
+    function fly() {
+        document.addEventListener('mousemove', function(a) {
+            console.log(a.pageX + ", " + a.pageY);
+            mouse.style.left = a.pageX + "px";
+            mouse.style.top = a.pageY + "px";
+
+        })
+    }
+
+    fly();
+
+    </script>
+</body>
+
+</html>
