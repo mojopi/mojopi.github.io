@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html id="background">
+<head>
+	<title></title>
+
+	<style type="text/css">
+#background {
+	background-repeat: no-repeat;
+}
+	</style>
+
+</head>
+<body>
+
+<div></div> 
+<script>
+	
+	    var backgroundImage = localStorage.getItem('backgroundImage');
+
+	    var background = document.getElementById("background");
+
+	    background.style.backgroundImage = "url(" + localStorage.getItem("backgroundImage") + ")";
+	    background.style.backgroundSize = "cover";
+
+
+
+</script>
+
+</body>
+</html>
