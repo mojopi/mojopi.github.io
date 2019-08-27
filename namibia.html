@@ -52,29 +52,20 @@
         <div id="innerbox">
             <div></div>
             <script>
-            // console.log(a.pageX, a.pageY)
+           //The function stamp below has 4 parts.
 
 
-
-            // var stamp = this;
-            // var stamp = 
-            //        var c;
-            //        function get(c) {
-            //            console.log(c.pageX);
-            // return "c.pageX";
-
-            //        }
-
-            //        document.addEventListener('click', get)
-
+           // Part 1: the document is listening for the "mousemove" event on the whole document and then I'm adding HTML (text) to the div with the ID of "innerbox" (see above before script section) that is the x and y coordinates of wherever the mouse is. The argument of any function used with an event listener is the "event" itself so in this case, "a" is standing for event and so when I saw a.pageY or a.pageX, I'm getting the x and y coordinates of the event itself.
 
             function stamp(b) {
+                
+
                 document.addEventListener('mousemove', function(a) {
                     innerbox.innerHTML = a.pageX + ", " + a.pageY;
 
                 })
 
-                //how come can do a.pageX vs. event.pagex. Would i need to put the event as an arugment to do that?//
+               // Part 2: creating a circle with a random color and a random size between 0 and 150px. I'm using the Math.random() method.//
 
 
                 var circle = document.createElement('div');
@@ -86,13 +77,14 @@
                     Math.floor(Math.random() * 255) + ',' +
                     Math.floor(Math.random() * 255) + ')';
 
-
                 circle.style.borderRadius = '50%';
                 circle.style.position = 'fixed';
+
+                // Part 3: choosing the position of the circle to be the x and y coordinates of the "event" on the document//
                 circle.style.left = event.pageX + "px";
                 circle.style.top = event.pageY + "px";
                 circle.style.opacity = '1.0';
-
+//Part 4 this is where I'm creating a div that's a child of the circle that says the  X and Y coordinates of the cirlce (aka where I'm clicking on the document)
                 var box = document.createElement('div');
                 box.id = "location"
                 circle.appendChild(box);
@@ -101,18 +93,21 @@
                 box.style.position = "relative"
                 box.style.top = "15%"
                 box.style.left = "15%"
-                // box.style.backgroundColor = "green"
-
-                // box.innerHTML = '<span style = 'font-size:20%' >
-                //     "I'm at" + event.pageX + "," + event.pageY </span>   
-
+        
                 box.innerHTML = "I'm at " + event.pageX + ", " + event.pageY + "!";
 
-               /*how do I change the font size and color using javascript of an html element? box.innerHTML.fontSize = Math.random()* 50 + "px"; */      
+                   
 
             }
 
+            // this is the final section of the code sketch where I fun the stamp function whenever I click on the page!//
+
             document.addEventListener('click', stamp)
+///Questions I still have ///////////
+
+             //how come can do a.pageX vs. event.pagex. Would i need to put the event as an arugment to do that?//
+
+               /*how do I change the font size and color using javascript of an html element? box.innerHTML.fontSize = Math.random()* 50 + "px"; */
             </script>
 </body>
 

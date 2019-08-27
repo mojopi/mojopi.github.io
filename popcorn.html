@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+    #description {
+        font-family: "Courier New";
+        size: 16px;
+
+    }
+
+    #kernals {
+        background-image: url(https://s3-us-west-2.amazonaws.com/codesketches/popcorn+kernals.png);
+        height: 250px;
+        width: 265px;
+    }
+    </style>
+</head>
+
+<body>
+    <h2 id="description"> click + hold on my kernals!</h2>
+    <audio id="audio" src="https://s3-us-west-2.amazonaws.com/codesketches/Blop-Mark_DiAngelo-79054334+(1).wav"></audio>
+    <div id="kernals"></div>
+    <script>
+    //this function creates the little popcorns and then has them fade//
+
+    function pop() {
+        var popcorn = document.createElement('div');
+        document.body.appendChild(popcorn);
+        popcorn.style.width = "60px";
+        popcorn.style.height = "60px";
+        popcorn.style.borderRadius = '50%';
+        popcorn.style.position = 'fixed';
+
+        popcorn.style.left = (2 * Math.random()) * 400 + "px";
+        popcorn.style.top = (4 * Math.random()) * 200 + "px";
+        popcorn.style.backgroundImage = 'url(https://s3-us-west-2.amazonaws.com/codesketches/popcorn1.png)';
+        popcorn.style.transitionDuration = '1s';
+
+        function fadetoTransparent() {
+            //1) makepopcorn's opacity 0, 
+            //2) wait several seconds 
+            //3) makepopcorn's opacity 0.2//
+            setTimeout(function() {
+                popcorn.style.opacity = 0.0
+            }, 2000)
+        }
+
+
+        fadetoTransparent();
+
+    }
+
+        pop();
+
+        //in this section, I made a few functions that assign a variable mousedown or mouseupn to true or false. I also made a function that assigns a variable a "setInterval" function runs a function ver 15ms. I made another function that does this same thing for playing an audio file and another one which clears the setInterval function.
+
+
+        var mousedown;
+
+        function f() {
+            mousedown = false
+        };
+
+        function t() {
+            mousedown = true
+        }
+        kernals.addEventListener('mousedown', t
+
+        kernals.addEventListener('mouseup', f);
+
+        kernals.addEventListener('mousedown', y);
+
+        var b;
+
+        function y() {
+            popping = setInterval(popcorn, 150)
+        }
+
+
+        function popcorn() {
+            console.log("1");
+            pop();
+            if (mousedown == false) {
+                clearInterval(popping)
+            }
+
+
+            kernals.addEventListener('mousedown', z);
+
+
+            var c;
+
+            function z() {
+                c = setInterval(play, 150)
+            }
+
+            function play() {
+                var audio = document.getElementById("audio");
+                audio.play();
+                if (mousedown == false) {
+                    clearInterval(c)
+                }
+            }
+
+
+        }
+
+    
+    </script>
+</body>
+
+</html>

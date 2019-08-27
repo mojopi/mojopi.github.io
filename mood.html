@@ -46,6 +46,9 @@
 
 
     <script>
+
+    //this is a function that I'm using to create circular divs that I'm calling "buttons." They have random colors
+
     var button;
 
     function createButton(n) {
@@ -67,6 +70,8 @@
 
         button.style.borderRadius = "50%";
         button.id = "button" + n;
+
+    //this is where I'm creating a div that acts as a textbox in the circlebuttons//
 
         var innerBox = document.createElement("div");
         button.appendChild(innerBox);
@@ -100,7 +105,7 @@
     var innerBox4 = document.getElementById("innerBox4");
     innerBox4.innerHTML = "dancy";
 
-
+//Below I'm adding a click event listener that connects the button to changing the background to a particular image//
 
 
     var button0 = document.getElementById("button0");
@@ -145,15 +150,13 @@
     button4.addEventListener("click", function() {
         console.log("hi!");
         document.getElementById('html');
-        html.style.backgroundImage = "url(https://s3-us-west-2.amazonaws.com/codesketches/dancy.jpg)";
+        html.style.backgroundImage = "url(https://codesketches.s3-us-west-2.amazonaws.com/dancy.jpg)";
         html.style.backgroundSize = "contain";
+
 
     });
 
 
-
-    // innerBox.innerHTML.style["fontFamily"] = "Courier";
-    // innerBox.innerHTML.style["fontSize"] = "16px";
     </script>
 </body>
 

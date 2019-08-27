@@ -4,6 +4,10 @@
 <head>
     <style>
 
+    body{
+        cursor:none;
+    }
+
     #anaiya{
     	text-align: center;
     }
@@ -165,8 +169,8 @@ Everything about her was wonderful. This is her story. <br>
     document.body.appendChild(mouse);
     mouse.style.width = "100px";
     mouse.style.height = "200px";
-    // mouse.style.backgroundColor = "blue";
-    mouse.style.backgroundImage = "url(https://s3-us-west-2.amazonaws.com/codesketches/fairy.png)";
+    mouse.style.backgroundImage = "url(fairy.png)";
+    mouse.style.backgroundPosition = "center";
     mouse.style.position = "relative";
     mouse.style.backgroundSize = "cover";
     mouse.id = "mouse";
@@ -176,7 +180,7 @@ Everything about her was wonderful. This is her story. <br>
         document.addEventListener('mousemove', function(a) {
             console.log(a.pageX + ", " + a.pageY);
             mouse.style.left = a.pageX + "px";
-            mouse.style.top = a.pageY + "px";
+            mouse.style.top = a.pageY +"px";
 
         })
     }

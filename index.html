@@ -3,24 +3,28 @@
 
 <head>
     <style>
+    #part1 {
+        padding: 2%;
+        text-align: left;
+    }
+
     #title {
         font-family: "Courier New";
         font-style: light;
         color: black;
-        text-align: center;
+        /*        text-align: center;
+*/
     }
 
     #h1 {
         font-family: "Courier New";
         font-style: light;
-        color: black;
-        text-align: center;
+
     }
 
-    .day {
+    #part1 p {
         font-family: "Courier New";
         size: 14px;
-        text-align: center;
 
     }
     </style>
@@ -28,26 +32,44 @@
 
 <body>
     <br> <br> <br>
-    <h2 id="title"> code sketches</h2>
-    <h3 id="h1"> i want to doodle with code <br>
-        and explore new ideas.
-        <br><br>
-        inspired by <a href=" http://jenniferdewalt.com/">this</a>, <br> I decided to do <br> one code sketch per day. <br> <br> <br>
-    </h3>
-    <p class="day"> <a href="day1.html"> day 1</a>: march 1st, 2016 </p>
-    <p class="day"> <a href="day2.html"> day 2</a>: march 2nd, 2016 </p>
-    <p class="day"> <a href="day3.html"> day 3</a>: march 3rd, 2016 </p>
-    <p class="day"> <a href="day4.html"> day 4</a>: march 4th, 2016 </p>
-    <p class="day"> <a href="day5.html"> day 5</a>: march 5th, 2016 </p>
-    <p class="day"> <a href="anaiyaStoryExample.html"> day 6</a>: march 6th, 2016 </p>
-    <p class="day">.................break..................<p>
-            <p class="day"> <a href="mombday.html"> day 7</a>: march 12th, 2016 </p>
-            <p class="day">
-                <a href="brainWeather1.html"> day 8</a>: march 17th, 2016 </p>
-            <p class="day">.................break..................<p>
-                    <p class="day">5/12/19 <a href="day9.html">my iphone dilemmas</a> and <a href="./reveal/index.html"> others' contemplations</a></p>
-                    <script>
-                    </script>
+    <div id="part1">
+        <h2 id="title">Code sketches!</h2>
+        <h3 id="h1">learning to code by doodling with code...inspired by <a href=" http://jenniferdewalt.com/">this!</a>
+        </h3>
+        <p>3-1-16: <a href="octopus.html">octopus</a></p>
+        <p>I was reading one of my favorite books, <a href="https://www.amazon.com/Soul-Octopus-Surprising-Exploration-Consciousness/dp/1451697724">The Soul of An Octopus</a>, by Sy Montgomery, and I wanted to make an octopus leg that when you click on the sucker, you get some kind of pop noise, kind of like the sound of a sunction cup popping off of something. Here, I played a lot with positioning to get the circles on top of the suckers. I also played around with opacity to give them a look that I really liked.</p>
+        <p>I used the "click" event listener in javascript to trigger the sound effect that I added. In the middle of making this codesketch, while browsing through sound effects, I found the one I ended up including, which think is much better than a pop:)</p>
+        <p>This was the first time I ever incorporated audio into something I made. It's also the first time I ever used the click event listener. I love this codesketch because it's so playful and surprising and it incorporates one of my favorite animals. I think the combination of whimsical and animal exemplifies my aesthetic;)</p>
+        ...................................................
+        <p>3-2-16: <a href="popcorn.html">popcorn</a></p>
+        <p>
+            I actually integrated the pop noise in this codesketch to make popcorn! When you click on the image of kernals, it different popped popcorns appear on the screen and you hear a "pop" noise! The popcorn will be popped as long as you old down the mouse!</p>
+        <p>I made this by using the mousedown, mouseup event listener. The browser is listening for those events when they happen on the kernals and setting variables to true and false. When mousedown is happening and the variable is true, then it runs a function that makes the popcorn divs and plays the sound. This was the first time I used the "setInterval" method, which runs a function (the popcorn-making function) every 150 milliseconds.</p>
+        <p>When the mouse is up and the variable becomes false, the "clearInterval" function is run and this stops the setInterval function.<br>
+        </p>
+        ...................................................
+        <p>3-3-15: <a href="namibia.html">namibia</a></p>
+        <p>3-4-16: <a href="prada.html">prada</a></p>
+        <p>
+            This codesketch is just so random. I wanted to make something that felt incongruous and I ended up juxtaposing wild animals and consumerism — a hippo and a butterfly in a Prada store. I played with animations (the butterfly is two pictures of a butterfly side-by-side and the animation goes between them by changing the background position of the div.) The butterfly div's position is set to the coordinates of the mouse and since I got rid of the pointer, it becomes the 'face' of the mouse.
+        </p>
+        <p>The hippo is just an image change on hover, so it looks like it's opening its mouth.</p>
+        <p>I feel like I'm really developing my whimscial, colorful, somewhat surreal and random aesthetic and I'm proud of that.</p>
+        ...................................................
+        <p>3-5-16: <a href="mood.html">mood buttons</a></p>
+        <p>
+            Here, I used an event listener on different circular, button divs. Each button brings up a particular image on the document associated — the image is associated with the mood on it.
+        </p>
+        <p>
+            I like how the buttons randomly change color each time I refresh the page. (I've used this Math.random()) color trick quite a few times throughout codesketches:)
+        </p>
+        <p>3-6-16: <a href="./anaiyaStory/anaiyaStory.html">anaiya story</a></p>
+        <p>3-12-16: <a href="momBday.html">mom bday</a></p>
+        <p>3-17-16: <a href="brainWeather.html">brain weather</a></p>
+        <p>5-12-19: <a href="iphoneDilemmas.html">iphone dilemmas</a> and <a href="./reveal/index.html">contemplations</a></p>
+    </div>
+    <script>
+    </script>
 </body>
 
 </html>
