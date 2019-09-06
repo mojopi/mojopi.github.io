@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style type="text/css">
+    body {
+        margin: 0;
+    }
+
+    section {
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        /*    	background-image: url(./imgs/photo2.jpg);
+*/
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+
+    .face {
+        height: 100%;
+        width: 20%;
+        background-repeat: no-repeat;
+        background-size: contain;
+        position: fixed;
+        z-index: 1;
+        /*        background-color: red;
+*/
+    }
+
+    #hearts {
+        width: 18%;
+        height: 100%;
+        left: 17%;
+        position: absolute;
+        z-index: 2;
+        /*        background-color: blue;
+*/
+        z-index: -1;
+        padding: 3%;
+    }
+
+    #xs {
+        width: 18%;
+        height: 100%;
+        left: 65%;
+        position: absolute;
+        /*        background-color: blue;
+*/
+        z-index: -1;
+        padding: 3%;
+    }
+
+    .heart {
+        width: 60px;
+        height: 60px;
+        position: relative;
+        background-image: url(./imgs/heart.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        text-align: center;
+        font-family: courier;
+        font-size: 16px;
+        padding: 10%;
+
+    }
+
+    .x {
+        width: 60px;
+        height: 60px;
+        position: relative;
+        background-image: url(./imgs/x.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        text-align: center;
+        font-family: courier;
+        font-size: 18px;
+        padding: 10%;
+
+    }
+
+    #left {
+        background-image: url("./imgs/face1.png");
+        left: 0%;
+    }
+
+    #right {
+        background-image: url("./imgs/face2.png");
+        right: 0%;
+    }
+
+    #iphone {
+
+        z-index: 1;
+        top: 20%;
+        width: 24vw;
+        height: 62vh;
+        position: fixed;
+        left: 34%;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-image: url("./imgs/iphone.png");
+        /*        background-color: blue;
+*/
+    }
+
+    #title {
+        position: absolute;
+        z-index: -1;
+        left: 36%;
+        width: 30%;
+        top: 0%;
+        font-size: 22px;
+        font-family: courier;
+        /*    	background-color: red;
+*/
+
+        /*    	background-color: red;
+*/
+    }
+
+    #screen {
+
+        width: 80%;
+        height: 75%;
+        position: relative;
+        left: 10%;
+        top: 11%;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    </style>
+    <title>To Iphone, or not?</title>
+</head>
+
+<body>
+    <section>
+        <div id="left" class="face"></div>
+        <div id="hearts">
+            <div class="heart" id="heart1">majd/<br>fam</div>
+            <div class="heart" id="heart2">students</div>
+            <div class="heart" id="heart3">maps/<br>lyft</div>
+            <div class="heart" id="heart4">podcast</div>
+        </div>
+        <div id="right" class="face"></div>
+        <div id="xs">
+            <div class="x" id="x1">attention</div>
+            <a href="https://thenextweb.com/insider/2014/12/19/bbc-investigation-unveils-poor-working-conditions-apple-factories/">
+                <div class="x" id="x2">labor</div>
+            </a>
+            <a href="https://www.dailymail.co.uk/home/moslive/article-1350811/In-China-true-cost-Britains-clean-green-wind-power-experiment-Pollution-disastrous-scale.html">
+                <div class="x" id="x3">resources</div>
+            </a>
+            <a href="https://www.vice.com/en_us/article/nz7kwm/the-periodic-table-of-iphone-elements">
+                <div class="x" id="x4">environment</div>
+            </a>
+            <a href="https://medium.com/the-mission/how-our-use-of-social-media-fuels-envy-comparison-anxiety-and-depression-538e4c87b963"><div class="x" id="x5">envy</div></a>
+            <a href="https://www.nytimes.com/interactive/2018/12/10/business/location-data-privacy-apps.html"><div class="x" id="x6">privacy</div></a>
+            <a href="https://www.nytimes.com/2019/02/23/business/cell-phone-addiction.html"><div class="x" id="x7">IRL <br> relationships</div></a>
+        </div>
+        <div id="right" class="face"></div>
+        <div id="title">
+            <p>To iphone or not iphone? <br> That is the question.</p>
+            <div>
+                <div id="iphone">
+                    <div id="screen"></div>
+                </div>
+    </section>
+    <script type="text/javascript">
+    var screen = document.getElementById("screen");
+    var heart1 = document.getElementById("heart1");
+
+    heart1.addEventListener("click", function() {
+        screen.style.backgroundImage = "url(./imgs/majd.gif)"
+    });
+
+    var heart2 = document.getElementById("heart2");
+
+    heart2.addEventListener("click", function() {
+        screen.style.backgroundImage = "url(./imgs/rebeka.gif)";
+        screen.style.backgroundPosition = "center";
+    });
+    var heart3 = document.getElementById("heart3");
+
+    heart3.addEventListener("click", function() {
+        screen.style.backgroundImage = "url(./imgs/map.jpg)";
+        screen.style.backgroundPosition = "center";
+    });
+
+    var heart4 = document.getElementById("heart4");
+    heart4.addEventListener("click", function() {
+        screen.style.backgroundImage = "url(./imgs/podcast.jpg)";
+        screen.style.backgroundPosition = "center";
+    })
+
+
+    var x1 = document.getElementById("x1");
+
+    x1.addEventListener("click", function() {
+        screen.style.backgroundImage = "url(./imgs/pick-ups.png)";
+        screen.style.backgroundPosition = "center";
+    });
+    </script>
+</body>
+
+</html>

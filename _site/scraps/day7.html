@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+</head>
+
+<body>
+    <script>
+    var makeBall = function() {
+        var self = this;
+        self.div = document.createElement('div');
+        document.body.appendChild(self.div);
+        self.div.style.width = "100px";
+        self.div.style.height = "100px";
+        self.div.style.backgroundColor = "blue";
+        // self.div.style.left = "0px";
+        self.div.style.position = "relative";
+
+        self.move = function () {self.div.style.left = parseInt(self.div.style.left) + 100 + "px"};
+
+        // self.move = function() {
+        //     self.div.style.left = parseInt(self.div.style.left) + self.velocity + 'px';
+        // };
+      var go = setInterval(self.move, 100);
+
+    }
+
+    for (var i = 0; i < 10; i = i + 1) {
+        makeBall(i)
+    };
+
+    balls = [];
+    balls.push(new makeBall(i));
+
+
+    //I now have an array of "instances" of the ran function makeBall. Those instances are now 10 different balls.//
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html id="background">
+
+<head>
+    <style>
+    #background {
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    
+    #question {
+        font-family: "Courier New";
+        text-align: center;
+    }
+    
+    #statement {
+        font-family: "Courier New";
+        text-align: center;
+    }
+    
+    .button {
+        background-color: red;
+        border-radius: 50%;
+        width: 100px;
+        height: 100px;
+        z-index: -1
+    }
+    
+    #buttonA {
+        background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKjJGGHKNw4iYf4ygpbgxPJScX5Tx-6ujS87crPLoEVbb13s5-");
+        background-size: cover;
+    }
+    
+    #buttonB {
+        background-image: url("https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSGI-HleRvOc1Ln7Zq4-k3meVCywNYG2NptAKt51pSK0YdRCOKj");
+        background-size: cover;
+    }
+    
+    #buttonC {
+        background-image: url("https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRlESdMsbwHSa4eIjHRItKWFOkhgFJFVohswFd0c8twU0J00aqT_w");
+        background-size: contain;
+    }
+    
+    #buttonD {
+        background-image: url("https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSPjwjxOS7hVv_SJjtrkA_nXgh3e0TIv-WTuMmk0Zrts0S45Rnn");
+        background-size: contain;
+    }
+    
+    #continentA {
+        background-image: url(http://cliparts.co/cliparts/Lcd/okX/LcdokX4oi.gif);
+        width: 1000px;
+        height: 500px;
+        z-index: 10;
+        background-size: cover;
+        position: fixed;
+        left: 10%;
+        top: 20%;
+        display: inline-block;
+    }
+
+
+    #africaText {
+
+        position: relative;
+        top: 50%;
+        left: 50%;
+
+
+    }
+    </style>
+</head>
+
+<body>
+    <h2 id="question">How's your brain weather?</h2>
+    <h3 id="statement">Cast your brain weather over the world.... <br>
+    Click on a button on the left and then click on a continent to see what your brain weather is like there! Wherever you go, there you are!
+</h3>
+    <div class="button" id="buttonA"></div>
+    <div class="button" id="buttonB"></div>
+    <div class="button" id="buttonC"></div>
+    <div class="button" id="buttonD"></div>
+
+    <a href="brainWeather2.html"> <div class="continent" id="continentA"> </div> </a>
+
+    <div class="continent" id="continentB"></div>
+    <div class="continent" id="continentC"></div>
+    <div class="continent" id="continentD"></div>
+    <a href="3/14-2.html#https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTU6o5JTfH7YcAn5UnDtGeNTUhBRvr36JY0Y9ipqTgsBvn1noXA"> </a>
+    <script>
+    var buttonA = document.getElementById("buttonA");
+    var background = document.getElementById("background");
+
+
+    buttonA.addEventListener("click", function changeBackground() {
+        background.style.backgroundImage = "url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTU6o5JTfH7YcAn5UnDtGeNTUhBRvr36JY0Y9ipqTgsBvn1noXA)";
+        background.style.backgroundSize = "cover";
+        localStorage.setItem("backgroundImage", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTU6o5JTfH7YcAn5UnDtGeNTUhBRvr36JY0Y9ipqTgsBvn1noXA")
+    });
+
+    buttonB.addEventListener("click", function changeBackground() {
+        background.style.backgroundImage = "url(http://www.northernlife.ca/uploadedImages/SUMMER_sunWater.jpg)";
+        background.style.backgroundSize = "cover";
+        localStorage.setItem ("backgroundImage", "http://www.northernlife.ca/uploadedImages/SUMMER_sunWater.jpg")
+    });
+
+    buttonC.addEventListener("click", function changeBackground() {
+        background.style.backgroundImage = "url(http://report.az/storage/news/b6561e5fd06e28947a3fbb2c8e6a221e/731c8a5a-fe4e-449d-bcef-337dcdb7791e.jpg)";
+        background.style.backgroundSize = "cover";
+        localStorage.setItem("backgroundImage", "http://report.az/storage/news/b6561e5fd06e28947a3fbb2c8e6a221e/731c8a5a-fe4e-449d-bcef-337dcdb7791e.jpg")
+    });
+
+
+    buttonD.addEventListener("click", function changeBackground() {
+        background.style.backgroundImage = "url(http://www.fico.com/en/blogs/wp-content/uploads/2015/09/Lightning-Storm.jpg)";
+        background.style.backgroundSize = "cover";
+        localStorage.setItem("backgroundImage", "http://www.fico.com/en/blogs/wp-content/uploads/2015/09/Lightning-Storm.jpg")
+    });
+    </script>
+</body>
+
+</html>
